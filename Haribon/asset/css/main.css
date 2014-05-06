@@ -3,6 +3,7 @@
 	position: relative
 }
 .contacts .map {
+	margin-top:50px;
 	height: 602px
 }
 .contacts .acerca {
@@ -44,6 +45,76 @@
 	text-align: center;
 	line-height: 2.0; 
 }
+.principal{
+	/*position: relative;*/
+	margin-top:50px;
+	/*padding-bottom:150px;*/
+	width:980px; 
+	margin-left:13%;
+	background: white; 
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.registrarPunto {
+	overflow: hidden;
+	/*border: yellow solid 2px;*/
+}
+.registrarPunto .dheaders {
+	height:45px;
+	text-align:center;
+	margin:8px; 
+} 
+
+.registrarPunto .dabajo{
+	width:870px;
+	/*border: black solid 2px;*/
+	float: left;
+	margin:8px;
+}
+.registrarPunto .mizquierda { 
+  	float:left;
+	height: 480px;
+	width: 330px;
+	margin-right:20px;
+	/*border: green solid 2px;*/
+	
+}
+.registrarPunto .dderecha{
+	float:left;
+	width: 520px; 
+	/*border: red solid 2px;*/
+} 
+
+
+.registrarPerfil {
+	overflow: hidden;
+	/*border: yellow solid 2px;*/
+}
+.registrarPerfil .dheaders {
+	height:300px;
+	width:100%;
+	text-align:center; 
+	border: yellow solid 2px;
+} 
+
+.registrarPerfil .dabajo{
+	width:870px;
+	/*border: black solid 2px;*/
+	float: left;
+	margin:8px;
+}
+.registrarPerfil .mizquierda { 
+  	float:left;
+	height: 480px;
+	width: 330px;
+	margin-right:20px;
+	/*border: green solid 2px;*/ 
+}
+.registrarPerfil .dderecha{
+	float:left;
+	width: 520px; 
+	/*border: red solid 2px;*/
+} 
 
 .contacts .innerRegistrar {
   position: absolute;
