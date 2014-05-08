@@ -280,10 +280,23 @@
 	<section>
         <div class="principal">
         	<div class="registrarPunto" >
-        		
-        		
         		<div class="dheaders form-horizontal"  > 
-        			<div class="form-group">
+        		<div class="btn-group">
+        			  <button  class="dropdown-toggle btn btn-success"  data-toggle="dropdown"  style="color: black;font-weight: bold;font-size: 15px" > 
+	                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agregar Ubicaci&oacute;n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+	                  </button>
+
+        			  <ul class="dropdown-menu with-arrow pull-right"> 
+	                    <li>
+	                        <a href="#"> 
+	                            <span>Eliminar Ubicaci&oacute;n</span>
+	                        </a>
+	                    </li> 
+	                  </ul>
+        			</div>
+        		
+        		 
+        		<!--	<div class="form-group">
 	        			<label   class="col-sm-2 control-label">Pais</label>
 			            <div class="col-sm-2"> 
 			              <select class="form-control">
@@ -296,8 +309,8 @@
 			                <option>Lima</option> 
 			            </select> 
 			            </div>
-		            </div> 
-        		</div> 
+		            </div> -->
+        		</div>  
         		<div id="map" class="mizquierda"  > </div>
         		<div class="dderecha"  >
         			<div    >
@@ -376,8 +389,8 @@
         		<div class="dabajo"> 
         		<div>
         		<ul class="nav nav-tabs">
-				  <li class="active"><a href="#">Bueno</a></li>
-				  <li><a href="#">Malo</a></li> 
+				  <li class="active"><a href="#">Comentar</a></li>
+				  <li><a href="#">Estuve Aqui...</a></li> 
 				</ul>
 				</div>
 				<div  >
@@ -388,7 +401,8 @@
 				  </div>
 					  <div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10"  style="text-align: right;margin-top: 4px"  >
-					      <button type="submit" class="btn btn-default">Comentar</button>
+					      <button type="submit" class="btn btn-success">Bueno</button>&nbsp;&nbsp;&nbsp;
+					      <button type="submit" class="btn btn-danger">Malo</button>
 					    </div>
 					  </div>
 				</div>
