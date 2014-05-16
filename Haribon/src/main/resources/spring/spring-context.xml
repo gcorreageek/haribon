@@ -68,13 +68,13 @@
 		<property name="dataSource" ref="jdbcTemplate1" />
 		<property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
-             p:database="${jpa.database}" p:showSql="${jpa.showSql}" /> 
+             p:database="${jpa.database}" p:showSql="${jpa.showSql}"  /> 
         </property>  
         <!-- 2 Formas de darle la imformacion de las clases son, cualquiera de las 2 puedes usar: -->
         <!-- persistenceUnitName:Es la principal, si estan las 2 a estan le hace caso a esta,nesesitas tener META-INF/persistence.xml -->
         <!-- packagesToScan:Escane todos las clases -->
-<!--         <property name="persistenceUnitName" value="persistenteSigal"/> -->
-        <property name="packagesToScan" value="com.haribon.model"/>
+        <property name="persistenceUnitName" value="persistenteSigal"/>
+<!--         <property name="packagesToScan" value="com.haribon.model"/> -->
 	</bean>  
 	 
 	

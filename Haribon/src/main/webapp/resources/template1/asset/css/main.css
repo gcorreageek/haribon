@@ -195,7 +195,7 @@
 	/*border: red solid 2px;*/
 }
 
-.contenido .innerRegistrar {
+.principal .innerRegistrar {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -213,7 +213,7 @@
   line-height: 2.0; 
 }
 
-.contenido .innerIngresar {
+.principal .innerIngresar {
   position: absolute;
   left: 140px;
   top:110px; 

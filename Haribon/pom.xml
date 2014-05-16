@@ -120,16 +120,16 @@
 		    <version>1.2.14</version>
 		</dependency>
         <!-- Vista -->
-        <dependency>
-		 <groupId>org.sitemesh</groupId>
-		 <artifactId>sitemesh</artifactId>
-		 <version>${sitemesh.version}</version>
-		</dependency> 
-		<dependency>
-		 <groupId>org.sitemesh</groupId>
-		 <artifactId>sitemesh</artifactId>
-		 <version>${sitemesh.version}</version>
-		</dependency> 
+<!--         <dependency> -->
+<!-- 		 <groupId>org.sitemesh</groupId> -->
+<!-- 		 <artifactId>sitemesh</artifactId> -->
+<!-- 		 <version>${sitemesh.version}</version> -->
+<!-- 		</dependency>  -->
+<!-- 		<dependency> -->
+<!-- 		 <groupId>org.sitemesh</groupId> -->
+<!-- 		 <artifactId>sitemesh</artifactId> -->
+<!-- 		 <version>${sitemesh.version}</version> -->
+<!-- 		</dependency>  -->
 <!-- 		<dependency> -->
 <!-- 		    <groupId>org.apache.tiles</groupId> -->
 <!-- 		    <artifactId>tiles-extras</artifactId> -->
@@ -170,7 +170,7 @@
 		
 	</dependencies>
 	<build>
-		<finalName>proyServlet</finalName>
+		<finalName>Haribon</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

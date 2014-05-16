@@ -25,9 +25,9 @@
           
           <form class="navbar-form navbar-right" role="form"> 
           	<button type="button"   onclick="javascript:location.href='registrar.html'"   	 class="btn btn-default tituloo4">Reg&iacutestrate</button> 
-          	<button type="button" onclick="javascript:location.href='ingresar.html'" class="btn btn-default tituloo4">Ingresar</button> 
+          	<button type="button" onclick="javascript:location='ingresar.html'" class="btn btn-default tituloo4">Ingresar</button> 
           </form>
         </div> 
         
       </div>
-    </div>
+    </div> 

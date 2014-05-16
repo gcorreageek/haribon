@@ -33,3 +33,12 @@
             <script src="<c:url value="/resources/asset/js/jquery.mCustomScrollbar.js" />"></script>
             <script src="http://maps.google.com/maps/api/js?sensor=false"></script> 
             <script src="<c:url value="/resources/asset/js/scripts.js" />"></script>
+            <script type="text/javascript" >
+            
+            mira = function(){ 
+            	$(function(){
+            		$.post( "ingresar" );
+            	});
+            	
+            } 
+            </script>

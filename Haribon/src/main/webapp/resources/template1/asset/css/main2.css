@@ -1,13 +1,16 @@
 body {
 	font-family: 'Oxygen', sans-serif;
 	background: #917E9E;
-}
-
+} 
 .tituloHaribonGrande {
 	font-family: 'Pacifico', cursive;
 	font-size: 23px;
-}
-
+} 
+.tituloo4 {
+	font-family: 'Oxygen', sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+} 
 .tituloo6 {
 	font-family: 'Pacifico', cursive;
 	font-size: 18px;
