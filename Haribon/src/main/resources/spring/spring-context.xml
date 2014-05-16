@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"  
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+			http://www.springframework.org/schema/jee
+            http://www.springframework.org/schema/jee/spring-jee.xsd">
+						
+	<context:component-scan base-package="com.haribon"  />
+	<mvc:annotation-driven /> 
+	<mvc:resources mapping="/resources/**" location="/resources/template1/" />
+<!-- 	<context:annotation-config   /> -->
+	
+<!-- 	<bean  class="com.mycompany.cuentas.controller.CuentaController"> -->
+<!-- 		<property name="cuentaDao" ref="cuentaDao" /> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="cuentaDao" class="com.mycompany.cuentas.dao.CuentaDAO"  />  -->
+	
+	 
+<!--   <bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver" > -->
+<!--   	<property name="basename" value="views" /> -->
+<!--   </bean> -->
+ 
+ 
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix"><value>/WEB-INF/views/</value></property>
+		<property name="suffix"><value>.jsp</value></property>
+	</bean>
+	
+<!--    <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"   ></bean> -->
+<!--    <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"  > -->
+<!--    		<property name="definitions"> -->
+<!--    			<list><value>/WEB-INF/tiles.xml</value> </list> -->
+<!--    		</property> -->
+<!--    </bean> -->
+
+ 	<!-- Aspect -->
+<!--     <aop:aspectj-autoproxy /> -->
+<!-- 	<bean id="monitoreandoAspect" class="com.haribon.utiles.MonitoreandoAspect" /> -->
+	
+	<context:property-placeholder location="classpath:spring/data-access.properties"  system-properties-mode="OVERRIDE" />
+	<bean  id="jdbcTemplate1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+<!-- 	JDNI: Para trabajar con JDNI se tiene que agregar lo de abajo a Context.xml del tomcat-->
+<!-- <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="jdbc/myDB" password="mysql" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/bd_sigal" username="root"/> -->
+	<bean id="jdbcTemplate2"  class="org.springframework.jndi.JndiObjectFactoryBean"   >
+		<property name="jndiName" value="java:comp/env/jdbc/myDB"  />
+	</bean> 
+	<bean id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="jdbcTemplate1" />
+		<property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+             p:database="${jpa.database}" p:showSql="${jpa.showSql}" /> 
+        </property>  
+        <!-- 2 Formas de darle la imformacion de las clases son, cualquiera de las 2 puedes usar: -->
+        <!-- persistenceUnitName:Es la principal, si estan las 2 a estan le hace caso a esta,nesesitas tener META-INF/persistence.xml -->
+        <!-- packagesToScan:Escane todos las clases -->
+<!--         <property name="persistenceUnitName" value="persistenteSigal"/> -->
+        <property name="packagesToScan" value="com.haribon.model"/>
+	</bean>  
+	 
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="myEntityManagerFactory"  />
+	</bean>
+	<tx:annotation-driven     />
+	
+<!-- 	<bean id="mySessionFactory"   class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">   -->
+<!-- 		<property name="dataSource" ref="jdbcTemplate2" ></property> -->
+<!-- 		<property name="annotatedClasses">  -->
+<!--             <list>  -->
+<!--                 <value>com.haribon.model.Area</value> -->
+<!--             </list> -->
+<!--         </property> -->
+<!--         <property name="hibernateProperties"> -->
+<!-- 	      <props> -->
+<!-- 	        <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop> -->
+<!-- 	        <prop key="hibernate.show_sql">true</prop> -->
+<!-- 	      </props> -->
+<!-- 	    </property>  -->
+<!-- 	</bean> --> 
+<!-- 	<bean  id="transactionManager" -->
+<!-- 	class="org.springframework.orm.hibernate4.HibernateTransactionManager" -->
+<!--     p:sessionFactory-ref="mySessionFactory" > -->
+<!--     </bean>  --> 
+<!--     <tx:annotation-driven transaction-manager="myTransactionManager"/> -->
+<!-- Por defecto recibe el nombre de id="transactionManager", pero si le pones otro lo tienes que mencionar, como el caso de arriba -->
+<!-- 	<tx:annotation-driven   /> -->
+	
+	
+
+	
+	
+	
+	
+</beans>
